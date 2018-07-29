@@ -41,9 +41,9 @@
     <!-- Logo -->
     <a href="../../index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>F</b>C</span>
+      <span class="logo-mini"><b>I</b>T</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Fix Cleaning</b></span>
+      <span class="logo-lg"><b>Is Takip</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
