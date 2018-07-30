@@ -195,7 +195,7 @@ class AppointmentController extends Controller
         if(in_array("smscustomer", $request->input('sms'))){
             $musteria = array();
             array_push($musteria, str_replace($srcphone, $rpcphone,$customer->phone));
-            $SMSmessage = "Sayın ".$customer->name.", ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için randevunuz başarı ile oluşturulmuştur. Ödeme Yapacağınız Tutar : ".$appointment->service_pay."’dir. Bilgi ve Sorularınız İçin 0 545 452 50 83 – 0 232 502 44 42 numaralı telefonları arayınız. www.fixcleaning.net";
+            $SMSmessage = "Sayın ".$customer->name.", ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için randevunuz başarı ile oluşturulmuştur. Ödeme Yapacağınız Tutar : ".$appointment->service_pay."’dir.";
             $smsSenderFactory->sendSMS($SMSmessage , $musteria);
         }
         if(in_array("smsdriver", $request->input('sms'))){
@@ -207,7 +207,7 @@ class AppointmentController extends Controller
             $smsSenderFactory->sendSMS($SMSmessage , $drivera);
         }
         if(in_array("smsemployee", $request->input('sms'))){
-           $SMSmessage = "Merhaba ; ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için çağırılmaktasınız. Lütfen belirtilen saatten 1 saat öncesinde hazır olup, şoförün sizi aramasını bekleyiniz. Bu tarih ve saat ile ilgili bir problem olursa ve temizliğe gelemeyecekseniz lütfen derhal 0 545 452 50 83 – 0 232 502 44 42 numaralı telefonu arayıp bilgi veriniz";
+           $SMSmessage = "Merhaba ; ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için çağırılmaktasınız. Lütfen belirtilen saatten 1 saat öncesinde hazır olup, şoförün sizi aramasını bekleyiniz.";
             $smsSenderFactory->sendSMS($SMSmessage , $employeesa);
         }
         }
@@ -351,7 +351,7 @@ class AppointmentController extends Controller
         if(in_array("smscustomer", $request->input('sms'))){
             $musteria = array();
             array_push($musteria, str_replace($srcphone, $rpcphone,$customer->phone));
-            $SMSmessage = "(DUZELTME)Sayın ".$customer->name.", ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için randevunuz başarı ile oluşturulmuştur.Randevunuz ".$appointment_range." tekrarlanacaktır. Ödeme Yapacağınız Tutar : ".$appointment->service_pay."’dir. Bilgi ve Sorularınız İçin 0 545 452 50 83 – 0 232 502 44 42 numaralı telefonları arayınız. www.fixcleaning.net";
+            $SMSmessage = "(DUZELTME)Sayın ".$customer->name.", ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için randevunuz başarı ile oluşturulmuştur.Randevunuz ".$appointment_range." tekrarlanacaktır. Ödeme Yapacağınız Tutar : ".$appointment->service_pay."’dir.";
             $smsSenderFactory->sendSMS($SMSmessage , $musteria);
         }
         if(in_array("smsdriver", $request->input('sms'))){
@@ -363,7 +363,7 @@ class AppointmentController extends Controller
             $smsSenderFactory->sendSMS($SMSmessage , $drivera);
         }
         if(in_array("smsemployee", $request->input('sms')) and $request->has('employee_id')){
-           $SMSmessage = "(DUZELTME)Merhaba ; ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için çağırılmaktasınız. Lütfen belirtilen saatten 1 saat öncesinde hazır olup, şoförün sizi aramasını bekleyiniz. Bu tarih ve saat ile ilgili bir problem olursa ve temizliğe gelemeyecekseniz lütfen derhal 0 545 452 50 83 – 0 232 502 44 42 numaralı telefonu arayıp bilgi veriniz";
+           $SMSmessage = "(DUZELTME)Merhaba ; ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için çağırılmaktasınız. Lütfen belirtilen saatten 1 saat öncesinde hazır olup, şoförün sizi aramasını bekleyiniz.";
             $smsSenderFactory->sendSMS($SMSmessage , $employeesa);
         }
         }
@@ -508,7 +508,7 @@ class AppointmentController extends Controller
         if(in_array("smscustomer", $request->input('sms'))){
             $musteria = array();
             array_push($musteria, str_replace($srcphone, $rpcphone,$customer->phone));
-            $SMSmessage = "Sayın ".$customer->name.", ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için randevunuz başarı ile oluşturulmuştur.Randevunuz ".$appointment_range." tekrarlanacaktır. Ödeme Yapacağınız Tutar : ".$appointment->service_pay."’dir. Bilgi ve Sorularınız İçin 0 545 452 50 83 – 0 232 502 44 42 numaralı telefonları arayınız. www.fixcleaning.net";
+            $SMSmessage = "Sayın ".$customer->name.", ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için randevunuz başarı ile oluşturulmuştur.Randevunuz ".$appointment_range." tekrarlanacaktır. Ödeme Yapacağınız Tutar : ".$appointment->service_pay."’dir.";
             $smsSenderFactory->sendSMS($SMSmessage , $musteria);
         }
         if(in_array("smsdriver", $request->input('sms'))){
@@ -521,7 +521,7 @@ class AppointmentController extends Controller
         }
         if(in_array("smsemployee", $request->input('sms')) and $request->has('employee_id')){
             $employeenametext = rtrim($employeenametext,','); 
-           $SMSmessage = "Merhaba ; ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için çağırılmaktasınız. Lütfen belirtilen saatten 1 saat öncesinde hazır olup, şoförün sizi aramasını bekleyiniz. Bu tarih ve saat ile ilgili bir problem olursa ve temizliğe gelemeyecekseniz lütfen derhal 0 545 452 50 83 – 0 232 502 44 42 numaralı telefonu arayıp bilgi veriniz";
+           $SMSmessage = "Merhaba ; ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için çağırılmaktasınız. Lütfen belirtilen saatten 1 saat öncesinde hazır olup, şoförün sizi aramasını bekleyiniz.";
             $smsSenderFactory->sendSMS($SMSmessage , $employeesa);
         }
         }
@@ -843,7 +843,7 @@ class AppointmentController extends Controller
         if(in_array("smscustomer", $request->input('sms'))){
             $musteria = array();
             array_push($musteria, str_replace($srcphone, $rpcphone,$customer->phone));
-            $SMSmessage = "(DUZELTME)Sayın ".$customer->name.", ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için randevunuz başarı ile oluşturulmuştur. Ödeme Yapacağınız Tutar : ".$appointment->service_pay."’dir. Bilgi ve Sorularınız İçin 0 545 452 50 83 – 0 232 502 44 42 numaralı telefonları arayınız. www.fixcleaning.net";
+            $SMSmessage = "(DUZELTME)Sayın ".$customer->name.", ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için randevunuz başarı ile oluşturulmuştur. Ödeme Yapacağınız Tutar : ".$appointment->service_pay."’dir.";
             $smsSenderFactory->sendSMS($SMSmessage , $musteria);
         }
         if(in_array("smsdriver", $request->input('sms'))){
@@ -855,7 +855,7 @@ class AppointmentController extends Controller
             $smsSenderFactory->sendSMS($SMSmessage , $drivera);
         }
         if(in_array("smsemployee", $request->input('sms'))){
-           $SMSmessage = "(DUZELTME)Merhaba ; ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için çağırılmaktasınız. Lütfen belirtilen saatten 1 saat öncesinde hazır olup, şoförün sizi aramasını bekleyiniz. Bu tarih ve saat ile ilgili bir problem olursa ve temizliğe gelemeyecekseniz lütfen derhal 0 545 452 50 83 – 0 232 502 44 42 numaralı telefonu arayıp bilgi veriniz";
+           $SMSmessage = "(DUZELTME)Merhaba ; ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için çağırılmaktasınız. Lütfen belirtilen saatten 1 saat öncesinde hazır olup, şoförün sizi aramasını bekleyiniz.";
             $smsSenderFactory->sendSMS($SMSmessage , $employeesa);
         }
             }
@@ -1071,7 +1071,7 @@ class AppointmentController extends Controller
                 $googlemapslink .= "Konum Linki : http://www.google.com/maps/place/".str_replace($srcmap, $rpcmap,$appointment->customer->address_coordinates);
                 }
             $smsSenderFactory = new smsSenderFactory();
-             $employeeMessage = "Merhaba ; ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için çağırılmaktasınız. Lütfen belirtilen saatten 1 saat öncesinde hazır olup, şoförün sizi aramasını bekleyiniz. Bu tarih ve saat ile ilgili bir problem olursa ve temizliğe gelemeyecekseniz lütfen derhal 0 545 452 50 83 – 0 232 502 44 42 numaralı telefonu arayıp bilgi veriniz";
+             $employeeMessage = "Merhaba ; ".$appointment_time->formatLocalized('%A %d %B %Y %H:%M')." tarihinde ".$servicestext." için çağırılmaktasınız. Lütfen belirtilen saatten 1 saat öncesinde hazır olup, şoförün sizi aramasını bekleyiniz.";
             $smsSenderFactory->sendSMS($employeeMessage , $employeesa);
 
             $drivera = array();

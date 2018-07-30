@@ -562,6 +562,6 @@
     });
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSD6Mo1Atj3qmBQ3kVZ4z648XFQXqQiNI&libraries=places&callback=initAutocomplete"
+    <script src="https://maps.googleapis.com/maps/api/js?key=your-api-key&libraries=places&callback=initAutocomplete"
          async defer></script>
 @endsection
