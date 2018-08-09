@@ -177,20 +177,7 @@
             <li><a href="{{ route('addUser') }}"><i class="fa fa-circle-o"></i> Yetkili Ekle</a></li>
           </ul>
         </li>
-         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-bolt"></i>
-            <span>Kampanya İşlemleri</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{ route('campaignsPage') }}"><i class="fa fa-circle-o"></i> Kampanyalar</a></li>
-            <li><a href="{{ route('pastcampaignsPage') }}"><i class="fa fa-circle-o"></i> Geçmiş Kampanyalar</a></li>
-            <li><a href="{{ route('newcampaignPage') }}"><i class="fa fa-circle-o"></i> Kampanya Oluştur</a></li>
-          </ul>
-        </li>
+   
         <li>
           <a href="{{ route('profitsPage') }}">
             <i class="fa fa-money"></i> <span>Kazançlar</span>
